@@ -1,0 +1,79 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.1"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts", ".tsx"]
+      }
+    }
+  },
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "rules": {
+    "@typescript-eslint/camelcase": "warn",
+    "@typescript-eslint/indent": ["off", 2, { "SwitchCase": 1 }],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "_" }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      { "ignoreClassFields": true }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react-hooks/rules-of-hooks": "error",
+
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/media-has-caption": "off",
+
+    "no-underscore-dangle": "off",
+    "indent": ["off", 2, { "SwitchCase": 1 }],
+    "linebreak-style": ["off", "unix"],
+    "quotes": ["error", "single"],
+    "no-console": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["src/context/*.tsx"],
+      "rules": {
+        "no-param-reassign": "off",
+        "consistent-return": "off"
+      }
+    }
+  ]
+}
