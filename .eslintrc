@@ -1,3 +1,21 @@
 {
-  "extends": "react-app"
+  "parser": "babel-eslint",
+  "extends": ["plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.1"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts", ".tsx"]
+      }
+    }
+  }
 }
