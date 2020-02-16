@@ -1,0 +1,5 @@
+**/node_modules/
+**/build/
+
+serverBuild.js
+/src/serviceWorker.js
