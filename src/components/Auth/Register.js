@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import firebase from '../../firebase';
 import md5 from 'md5';
 import {
   Grid,
@@ -11,6 +10,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import firebase from '../../firebase';
 
 class Register extends Component {
   state = {
@@ -24,20 +24,20 @@ class Register extends Component {
   };
 
   isFormValid = () => {
-    let errors = [];
+    const errors = [];
     let error;
 
     if (this.isFormEmpty(this.state)) {
       error = { message: 'Fill in all fields' };
       this.setState({ errors: errors.concat(error) });
       return false;
-    } else if (!this.isPasswordValid(this.state)) {
+    }
+    if (!this.isPasswordValid(this.state)) {
       error = { message: 'Password is invalid' };
       this.setState({ errors: errors.concat(error) });
       return false;
-    } else {
-      return true;
     }
+    return true;
   };
 
   isFormEmpty = ({ username, email, password, passwordConfirmation }) => {
@@ -52,14 +52,15 @@ class Register extends Component {
   isPasswordValid = ({ password, passwordConfirmation }) => {
     if (password.length < 6 || passwordConfirmation.length < 6) {
       return false;
-    } else if (password !== passwordConfirmation) {
-      return false;
-    } else {
-      return true;
     }
+    if (password !== passwordConfirmation) {
+      return false;
+    }
+    return true;
   };
 
   displayErrors = errors =>
+    // eslint-disable-next-line react/no-array-index-key
     errors.map((error, i) => <p key={i}>{error.message}</p>);
 
   handleChange = event => {
@@ -89,18 +90,18 @@ class Register extends Component {
             })
             .catch(err => {
               console.error(err);
-              this.setState({
-                errors: this.state.errors.concat(err),
+              this.setState(prevState => ({
+                errors: prevState.errors.concat(err),
                 loading: false,
-              });
+              }));
             });
         })
         .catch(err => {
           console.error(err);
-          this.setState({
-            errors: this.state.errors.concat(err),
+          this.setState(prevState => ({
+            errors: prevState.errors.concat(err),
             loading: false,
-          });
+          }));
         });
     }
   };
