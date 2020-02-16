@@ -33,14 +33,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
-    "prettier": "1.19.1"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -48,9 +40,24 @@
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [
-      "npm pretty",
-      "npm lint",
+      "npm run pretty",
+      "npm run lint",
       "git add"
     ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "1.19.1"
   }
 }
