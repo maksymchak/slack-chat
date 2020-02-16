@@ -48,8 +48,8 @@
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [
-      "npm run pretty",
-      "npm run lint",
+      "npm pretty",
+      "npm lint",
       "git add"
     ]
   }
