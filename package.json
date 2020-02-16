@@ -41,16 +41,10 @@
     "lint-staged": "^10.0.7",
     "prettier": "1.19.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{tsx,ts,js}": [
       "npm pretty",
-      "npm lint",
-      "git add"
+      "npm lint"
     ]
   }
 }

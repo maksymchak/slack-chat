@@ -7,4 +7,6 @@ class App extends Component {
   }
 }
 
+const x;
+
 export default App;
