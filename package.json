@@ -5,7 +5,7 @@
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "emoji-mart": "^2.6.1",
-    "eslint": "^6.8.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-babel": "^5.3.0",
@@ -51,8 +51,7 @@
   "lint-staged": {
     "*.{tsx,ts,js}": [
       "npm run pretty",
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "browserslist": [
@@ -63,7 +62,6 @@
   ],
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-babel": "^5.3.0",
