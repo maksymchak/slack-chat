@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/md5": "^2.1.33",
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.4",
     "@types/react": "^16.9.20",
@@ -49,8 +50,7 @@
     "precommit": "lint-staged",
     "lint": "eslint --cache --ignore-pattern './**/*.{tsx,ts,js}'",
     "pretty": "prettier --write \"**/*.{ts,tsx,js}\" --no-color",
-    "typecheck": "./scripts/typecheck.sh",
-    "checktype": "tsc -p ./tsconfig.json --noEmit"
+    "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,8 +64,7 @@
     "*.{tsx,ts,js}": [
       "npm run pretty",
       "npm typecheck",
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "browserslist": [
@@ -76,6 +75,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^25.1.3",
+    "@types/md5": "^2.1.33",
     "@types/node": "^13.7.4",
     "@types/react": "^16.9.20",
     "@types/react-dom": "^16.9.5",

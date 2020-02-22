@@ -60,7 +60,6 @@ class Register extends Component {
   };
 
   displayErrors = errors =>
-    // eslint-disable-next-line react/no-array-index-key
     errors.map((error, i) => <p key={i}>{error.message}</p>);
 
   handleChange = event => {
