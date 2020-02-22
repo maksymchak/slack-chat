@@ -48,7 +48,9 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "lint": "eslint --cache --ignore-pattern './**/*.{tsx,ts,js}'",
-    "pretty": "prettier --write \"**/*.{ts,tsx,js}\" --no-color"
+    "pretty": "prettier --write \"**/*.{ts,tsx,js}\" --no-color",
+    "typecheck": "./scripts/typecheck.sh",
+    "checktype": "tsc -p ./tsconfig.json --noEmit"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +63,7 @@
   "lint-staged": {
     "*.{tsx,ts,js}": [
       "npm run pretty",
+      "npm typecheck",
       "npm run lint"
     ]
   },

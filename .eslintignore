@@ -1,5 +1,6 @@
 **/node_modules/
 **/build/
+**/typings
 
 serverBuild.js
 /src/serviceWorker.js
