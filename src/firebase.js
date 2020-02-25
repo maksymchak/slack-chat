@@ -4,7 +4,7 @@ import 'firebase/database';
 import 'firebase/storage';
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyAsL52wVcDWDnaBobO_lxESBo2bOp0uX-c',
   authDomain: 'slack-chat-24e1c.firebaseapp.com',
   databaseURL: 'https://slack-chat-24e1c.firebaseio.com',
